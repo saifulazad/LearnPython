@@ -6,7 +6,19 @@ from factorypattern import (
 
 
 def create_pizza(pizza_type=None):
+    """
 
+    pizza creator function. here we just
+    pass pizza name as str and return
+    that pizza
+
+
+    :param pizza_type:
+    :return: pizza class
+    :raise KeyError, if one can not find pizza
+    by calling specific name
+
+    """
     pizzas = {'NormalPizza': NormalPizza, 'HotPizza': HotPizza}
 
     try:

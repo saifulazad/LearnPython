@@ -1,24 +1,38 @@
 
 
 class Food(object):
-
+    """
+    This is the base class that will be inherited
+     by any other class
+    """
     def __init__(self, name):
         self.name = name
 
     def test_food(self):
-        raise NotImplementedError
+        """
+        test_food method is abstract
+        various kind of food is tasted
+        in various way
+        :return:
+        """
+        raise NotImplementedError('Subclass must provide test_food method')
 
 
 class Pizza(Food):
 
     def __init__(self, name=None):
+        """
+        see that how we can pass
+        param to base class (Food)
+        :param name:
+        """
         super(Pizza, self).__init__(name=name or self.__class__.__name__)
 
     def test_food(self):
         print("{0} is good".format(self.name))
 
     def how_to_eat(self):
-        raise NotImplementedError
+        raise NotImplementedError('Subclass must provide how_to_eat method')
 
 
 class NormalPizza(Pizza):
